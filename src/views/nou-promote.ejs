@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>instaAds</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/login.css">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+
+
+<!-- necessari per fer lo de apareixer -->
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if  (document.getElementById("paid").checked == true) {
+    x.style.display = "block";
+  }
+  else {
+    x.style.display = "none";
+  }
+}
+</script>
+<script>
+function myFunction2() {
+  var x = document.getElementById("myDIV2");
+  if  (document.getElementById("post").checked == true) {
+    x.style.display = "block";
+  }
+  else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+<form class="modal-content" action="/promote" method="POST">
+  <div class="imgcontainer">
+    <h2>CREATE AD</h2>
+  </div>
+  <div class="contenidor" style="margin: 0 4% 4% 4%;">
+    <div class="row">
+      <div class="col-sm-2"><label for="ig_username"><h3>Username:</h3></label></div>
+      <div class="col-sm-3"><input type="text" name="ig_username" placeholder="Enter instagram username" required></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2"><label for="followers"><h3>Followers:</h3></label></div>
+      <div class="col-sm-3"><input type="text" name="followers" placeholder="Enter follower number" required></div>
+    </div>
+    <div class="row" style="display: none;">
+      <div class="col-sm-2"><label for="username"></label></div>
+      <div class="col-sm-3"><input type="text" name="username" placeholder="Enter follower number" value="<%= user.email %>" required></div>
+    </div>
+
+    <label for="niche"><h3>Niche</h3></label>
+    <ul style="list-style: none;">
+      <div class="row">
+        <div class="col-sm-3"><li><label><input type="radio" value="memes" name="niche" required> Memes</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="funny videos" name="niche" > Funny Videos</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="animals"  name="niche"> Animals</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="cars & bikes" name="niche" > Cars & Bikes</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="luxury"  name="niche"> Luxury</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="motivation"  name="niche"> Motivation</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="fanpage"  name="niche"> Fanpage</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="travel"  name="niche"> Travel</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="food"  name="niche"> Food</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="fashion"  name="niche"> Fashion</label></li></div>
+        <div class="col-sm-3"><li><label><input type="radio" value="quotes"  name="niche"> Quotes</label></li></div>
+      </div>
+    </ul>
+
+    <label for="type"><h3>Type</h3></label>
+      <ul style="list-style: none;">
+        <div class="row">
+          <div class="col-sm-3"><li><label><input id="post" type="radio" onclick="myFunction2()" value="post" name="type" required> Post</input></label></li></div>
+          <div class="col-sm-3"><li><label><input type="radio" onclick="myFunction2()" value="storie" name="type" > Storie</input></label></li></div>
+        </div>
+      </ul>
+      <div id="myDIV2" style="display: none;margin-top:25px; margin-bottom:25px;">
+        <label for="price"><b>Duration(hours):</b></label>
+        <input type="number" placeholder="Hours" name="hours" value="0" required>
+      </div>
+    <label for="payment"><h3>Payment</h3></label>
+      <ul style="list-style: none;">
+        <div class="row">
+          <div class="col-sm-3"><li><label><input id="paid" type="radio" onclick="myFunction()" value="paid" name="payment" required> Paid</input></label></li></div>
+          <div class="col-sm-3"><li><label><input type="radio" onclick="myFunction()" value="cross promotion" name="payment" > Cross promotion</input></label></li></div>
+        </div>
+      </ul>
+      <div id="myDIV" style="display: none;margin-top:25px; margin-bottom:25px;">
+        <label for="price"><b>Price(in US dollar):</b></label>
+        <input type="number" placeholder="Price" name="price" value="0" required>
+      </div>
+
+
+    <button type="submit">Submit Ad</button>
+  </div>
+</form>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">instaAds</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="/getpromoted">GET PROMOTED</a></li>
+          <li><a href="/promote">PROMOTE</a></li>
+          <li><a href="/myads">MY ADS</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/users/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>instaAds</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/login.css">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+
+  <form class="modal-content" action="/users/register" method="POST">
+    <div class="imgcontainer">
+      <h2>REGISTER FORM</h2>
+    </div>
+    <div class="contenidor">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter Name"
+        value="<%= typeof name != 'undefined' ? name : '' %>" required
+      />
+
+      <label for="email">Email</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Enter Email"
+        value="<%= typeof email != 'undefined' ? email : '' %>"
+      />
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Create Password"
+        value="<%= typeof password != 'undefined' ? password : '' %>"
+      />
+
+      <label for="password2">Confirm Password</label>
+      <input
+        type="password"
+        id="password2"
+        name="password2"
+        placeholder="Confirm Password"
+        value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+      />
+
+      <button type="submit">Register</button>
+    </div>
+  </form>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">instaAds</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="/">GET PROMOTED</a></li>
+          <li><a href="/promote">PROMOTE</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/users/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="/users/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+</body>
+</html>

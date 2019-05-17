@@ -7,11 +7,16 @@ const UserSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
     required: true
+  },
+  type: {
+    type: String,
+    required: true,
+    default: 'sense-confirmar'
   },
   date: {
     type: Date,

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Insta Promotions</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+  <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+       // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+  </script>
+</head>
+<body>
+
+  <div class="jumbotron text-center borde">
+    <h1>Insta Promotions</h1>
+    <p>Growing your audience on Insta made eazy</p>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>How to grow your audience ?</h2>
+        <h4>By advertising on other accounts</h4>
+        <p>One of the best ways to successfuly grow your audience on insta is getting your account promoted on a other page on the same or similar niche.</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-signal logo"></span>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid text-center bg-grey">
+    <h2>SERVICES</h2>
+    <h4>What we offer</h4>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-retweet"></span>
+        <h4>Advertising as a cross promoter</h4>
+        <p>Advertise your account to recive contact from people willing to cross promote.</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-usd"></span>
+        <h4>Advertising as a paid promoter</h4>
+        <p>Earn some extra cash advertising accounts to your audience.</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-th-list"></span>
+        <h4>A marketplace for promoting services</h4>
+        <p>Find someone willing to cross promote with or promote ur account in exchange for money.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid text-center">
+    <h2>Featured Ads</h2>
+    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active carousel-container">
+          <h5>Niche: <small>Memes</small></h5>
+          <h5>Followers: <small>15.000</small></h5>
+          <h5>Viewsxpost: <small>5.000</small></h5>
+          <h5>Pricexpost: <small>5 $</small></h5>
+          <h5>Viewsxstorie: <small>1.000</small></h5>
+          <h5>Pricexstorie: <small>5 $</small></h5>
+          <button class="btn btn-default btn-lg">Get in Touch</button>
+        </div>
+        <div class="item carousel-container">
+          <h5>Niche: <small>Cats</small></h5>
+          <h5>Followers: <small>15.000</small></h5>
+          <h5>Viewsxpost: <small>5.000</small></h5>
+          <h5>Pricexpost: <small>5 $</small></h5>
+          <h5>Viewsxstorie: <small>1.000</small></h5>
+          <h5>Pricexstorie: <small>5 $</small></h5>
+          <button class="btn btn-default btn-lg">Get in Touch</button>
+        </div>
+        <div class="item carousel-container">
+          <h5>Niche: <small>Dogs</small></h5>
+          <h5>Followers: <small>15.000</small></h5>
+          <h5>Viewsxpost: <small>5.000</small></h5>
+          <h5>Pricexpost: <small>5 $</small></h5>
+          <h5>Viewsxstorie: <small>1.000</small></h5>
+          <h5>Pricexstorie: <small>5 $</small></h5>
+          <button class="btn btn-default btn-lg">Get in Touch</button>
+        </div>
+        <div class="item carousel-container">
+          <h5>Niche: <small>Snowsports</small></h5>
+          <h5>Followers: <small>15.000</small></h5>
+          <h5>Viewsxpost: <small>5.000</small></h5>
+          <h5>Pricexpost: <small>5 $</small></h5>
+          <h5>Viewsxstorie: <small>1.000</small></h5>
+          <h5>Pricexstorie: <small>5 $</small></h5>
+          <button class="btn btn-default btn-lg">Get in Touch</button>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Insta Promotions</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="/getpromoted">GET PROMOTED</a></li>
+          <li><a href="/promote">PROMOTE</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/users/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="/users/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <footer class="container-fluid text-center bg-grey">
+    <a href="#" title="To Top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+  </footer>
+
+
+
+
+</body>
+</html>

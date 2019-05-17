@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+const path = require('path');
 
 const app = express();
 
@@ -22,8 +23,9 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
+app.use('/static', express.static(path.join(__dirname, 'public')));
 // EJS
-app.use(expressLayouts);
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Express body parser
